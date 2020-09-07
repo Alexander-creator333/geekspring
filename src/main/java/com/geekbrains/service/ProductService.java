@@ -14,6 +14,7 @@ public class ProductService {
     @Autowired
     public void setStudentsRepository(ProductRepository productRepository) {
         this.productRepository = productRepository;
+        //small changes
     }
 
     public ArrayList<Product> AllProduct() {

@@ -2,13 +2,14 @@ package com.geekbrains.launcher;
 
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.webapp.WebAppContext;
+import org.springframework.boot.actuate.autoconfigure.metrics.MetricsProperties;
 
 import java.net.URL;
 import java.security.ProtectionDomain;
 
 public class LauncherProduct {
     public static void main(String[] args) throws Exception {
-        Server server = new Server(8189);
+        Server server = new MetricsProperties.Web.Server(8189);
         ProtectionDomain domain = Launcher.class.getProtectionDomain();
         URL location = domain.getCodeSource().getLocation();
         WebAppContext webapp = new WebAppContext();
